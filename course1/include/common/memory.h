@@ -22,6 +22,9 @@
 #ifndef __MEMORY_H__
 #define __MEMORY_H__
 
+#include <stdint.h>
+#include <stdlib.h>
+
 /**
  * @brief Sets a value of a data array 
  *
@@ -30,7 +33,7 @@
  *
  * @param ptr Pointer to data array
  * @param index Index into pointer array to set value
- * @param value value to write the the locaiton
+ * @param value value to write to the location
  *
  * @return void.
  */
@@ -70,7 +73,7 @@ char get_value(char * ptr, unsigned int index);
  * by the provided size parameter.
  *
  * @param ptr Pointer to data array
- * @param value value to write the the locaiton
+ * @param value value to write to the location
  * @param size Number of elements to set to value
  *
  * @return void.
@@ -89,5 +92,76 @@ void set_all(char * ptr, char value, unsigned int size);
  * @return void.
  */
 void clear_all(char * ptr, unsigned int size);
+
+/**
+ * @brief Moves a block of memory from src to dst.
+ *
+ * @param src Pointer to source memory
+ * @param dst Pointer to destination memory
+ * @param length Number of bytes to move
+ *
+ * @return Pointer to the destination memory (dst).
+ */
+uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length);
+
+/**
+ * @brief Copies a block of memory from src to dst.
+ *
+ * @param src Pointer to source memory
+ * @param dst Pointer to destination memory
+ * @param length Number of bytes to copy
+ *
+ * @return Pointer to the destination memory (dst).
+ */
+uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length);
+
+/**
+ * @brief Sets a block of memory to a specified value.
+ *
+ * @param src Pointer to memory to set
+ * @param length Number of bytes to set
+ * @param value Value to set
+ *
+ * @return Pointer to the source memory (src).
+ */
+uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value);
+
+/**
+ * @brief Zeros out a block of memory.
+ *
+ * @param src Pointer to memory to zero out
+ * @param length Number of bytes to zero out
+ *
+ * @return Pointer to the source memory (src).
+ */
+uint8_t * my_memzero(uint8_t * src, size_t length);
+
+/**
+ * @brief Reverses a block of memory.
+ *
+ * @param src Pointer to memory to reverse
+ * @param length Number of bytes to reverse
+ *
+ * @return Pointer to the source memory (src).
+ */
+uint8_t * my_reverse(uint8_t * src, size_t length);
+
+/**
+ * @brief Reserves memory for a specified number of words.
+ *
+ * @param length Number of words to allocate
+ *
+ * @return Pointer to the allocated memory or NULL if failed.
+ */
+int32_t * reserve_words(size_t length);
+
+/**
+ * @brief Frees allocated memory.
+ *
+ * @param src Pointer to memory to free
+ *
+ * @return void.
+ */
+void free_words(int32_t * src);
 
 #endif /* __MEMORY_H__ */

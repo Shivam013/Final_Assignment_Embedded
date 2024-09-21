@@ -30,6 +30,7 @@
 #define TEST_ERROR          (1)
 #define TEST_NO_ERROR       (0)
 #define TESTCOUNT           (8)
+enum base{BASE_2=2, BASE_10=10, BASE_16=16};
 
 /**
  * @brief function to run course1 materials

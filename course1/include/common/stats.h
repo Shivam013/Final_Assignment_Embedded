@@ -42,7 +42,7 @@ double find_mean(unsigned char * arr);
  *
  * @param arr Pointer to the array of unsigned characters.
  */
-void print_array(unsigned char * arr);
+void print_array(unsigned char * arr, unsigned int size);
 
 /**
  * @brief Sorts an array in descending order.
